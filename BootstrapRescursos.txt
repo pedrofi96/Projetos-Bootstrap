@@ -1,0 +1,44 @@
+Como começar um projeto bootstrap editaod do 0:
+
+//comando para iniciar o package.json:
+
+npm init    
+
+//seguir os passos para adicionar o que for necessario,
+//Adicionar o sass com:
+
+npm i sass
+
+// seguir editando os scripts com:
+
+"sass:build": "sass --no-source-map scss:css",
+"sass:watch": "sass --no-source-map --watch scss:css" 
+
+//usar o script sass:build para criar nosso arquivo CSS
+
+npm run sass:build
+
+//usar npm run sass:watch para o nosso arquivo CSS ficar se atualizando sozinho, 
+//usar comando abaixo para parar o ultimo script
+ctrl+C
+
+//usar comando abaixo para instalar bootstrap no node modules:
+
+npm i bootstrap
+
+// criar arquivo sass para o bootstrap e usar o import abaixo para criar nosso css do bootstrap customizado:
+//lembrar de usar npm run sass:build para criar o arquivo css do bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+//Abaixo completamente opcional:
+// usar o comando abaixo para instalar o font awesome gratuito:
+
+npm i @fortawesome/fontawesome-free
+
+//repetir o processo com bootstrap adicionando:
+@import '../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/brands.scss';
+@import '../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
+
+//depois usar script de build para criar css do font awesome e copiar a pasta webfonts do node_modules do @fontawesome e adicionarr a raiz do projeto para usar devidamente.
+// não esquecer de usar o script sass:build para gerare arquivo css do font awesome.
